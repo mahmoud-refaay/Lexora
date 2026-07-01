@@ -1,0 +1,263 @@
+.pageContainer {
+  width: 100%;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ====== رأس الصفحة ====== */
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-fast);
+}
+
+.backBtn:hover {
+  color: var(--color-primary);
+  background: var(--color-primary-glow);
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ====== بطاقات الملخص ====== */
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.summaryCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px !important;
+  transition: var(--transition-normal);
+}
+
+.summaryCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--glass-border-focus);
+}
+
+.summaryIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.summaryMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.summaryCount {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+}
+
+.miniSpinner {
+  animation: spin 1s linear infinite;
+}
+
+.summaryLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ====== بطاقات الأدوار التفصيلية ====== */
+.rolesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 22px;
+}
+
+.roleCard {
+  display: flex;
+  flex-direction: column;
+  padding: 24px !important;
+  transition: var(--transition-normal);
+}
+
+.roleCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--glass-border-focus);
+  box-shadow: var(--glass-shadow);
+}
+
+.roleHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.roleIconWrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.roleTitleMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.roleName {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.roleUserCount {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.roleDesc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  min-height: 42px;
+}
+
+/* ====== قسم الصلاحيات ====== */
+.permissionsSection {
+  border-top: 1px solid var(--glass-border);
+  padding-top: 18px;
+  margin-top: auto;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 14px;
+}
+
+.permCount {
+  margin-inline-start: auto;
+  background: var(--color-primary-glow);
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.permissionsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.permBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.permBadge:hover {
+  background: rgba(192, 149, 84, 0.06);
+  color: var(--text-main);
+}
+
+/* ====== الأنيميشن ====== */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ====== التجاوب ====== */
+@media (max-width: 768px) {
+  .summaryGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .summaryCard {
+    padding: 14px !important;
+    gap: 10px;
+  }
+
+  .summaryIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .summaryCount {
+    font-size: 18px;
+  }
+
+  .rolesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .summaryGrid {
+    grid-template-columns: 1fr;
+  }
+}

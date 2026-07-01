@@ -1,0 +1,79 @@
+.detailsContainer { width: 100%; color: var(--text-main); display: flex; flex-direction: column; gap: 24px; }
+
+.topBar { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.backBtn { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 14px; font-weight: 600; padding: 8px 16px; border-radius: var(--border-radius-sm); transition: var(--transition-fast); }
+.backBtn:hover { color: var(--color-primary); background: var(--color-primary-glow); }
+.actionsBar { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ====== رأس الملف ====== */
+.profileHeader { display: flex; align-items: center; gap: 24px; padding: 32px !important; background: linear-gradient(135deg, rgba(192, 149, 84, 0.06) 0%, rgba(13, 19, 31, 0.7) 100%) !important; border: 1px solid var(--glass-border) !important; position: relative; overflow: hidden; }
+.profileHeader::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--color-primary), transparent); }
+.profileAvatar { width: 88px; height: 88px; border-radius: 50%; background: var(--color-primary-glow); color: var(--color-primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 2px solid var(--color-primary); box-shadow: 0 0 24px var(--color-primary-glow); }
+.profileMeta { display: flex; flex-direction: column; gap: 4px; }
+.profileName { font-size: 24px; font-weight: 800; color: var(--text-main); letter-spacing: -0.3px; }
+.profileType { font-size: 14px; color: var(--color-secondary); font-weight: 600; }
+.profileBadges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+
+.statusBadge { display: inline-flex; align-items: center; padding: 4px 12px; font-size: 12px; font-weight: 600; border-radius: 20px; }
+.status_Open { color: var(--color-success); background: var(--color-success-glow); }
+.status_Pending { color: var(--color-warning); background: var(--color-warning-glow); }
+.status_Scheduled { color: var(--color-secondary); background: var(--color-secondary-glow); }
+.status_Closed { color: var(--text-muted); background: rgba(255,255,255,0.05); }
+
+.archivedBadge { display: inline-flex; align-items: center; padding: 4px 12px; font-size: 12px; font-weight: 600; color: var(--color-danger); background: var(--color-danger-glow); border-radius: 20px; }
+.clientBadge { display: inline-flex; align-items: center; gap: 5px; padding: 4px 12px; font-size: 12px; font-weight: 600; color: var(--color-primary); background: var(--color-primary-glow); border-radius: 20px; border: 1px solid var(--glass-border); }
+
+/* ====== الموضوع ====== */
+.subjectCard { padding: 20px 24px !important; }
+.subjectText { font-size: 14px; color: var(--text-main); line-height: 1.7; }
+
+/* ====== شبكة المحتوى ====== */
+.contentGrid { display: grid; grid-template-columns: 1fr 360px; gap: 20px; align-items: start; }
+.mainCol { display: flex; flex-direction: column; gap: 20px; }
+.sideCol { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 24px; }
+
+.infoCard, .notesCard { padding: 24px !important; }
+.cardTitle { font-size: 15px; font-weight: 700; color: var(--color-primary); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--glass-border); letter-spacing: 0.3px; }
+
+.infoList { display: flex; flex-direction: column; gap: 18px; }
+.infoRow { display: flex; align-items: flex-start; gap: 14px; }
+.infoIcon { width: 36px; height: 36px; border-radius: var(--border-radius-sm); background: rgba(192, 149, 84, 0.06); color: var(--text-muted); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.infoContent { display: flex; flex-direction: column; gap: 2px; }
+.infoLabel { font-size: 12px; color: var(--text-muted); font-weight: 600; }
+.infoValue { font-size: 14px; color: var(--text-main); font-weight: 500; word-break: break-word; }
+.highlightValue { color: var(--color-primary); font-weight: 700; }
+.clickableValue { color: var(--color-secondary); cursor: pointer; text-decoration: underline; text-decoration-color: transparent; transition: text-decoration-color var(--transition-fast); }
+.clickableValue:hover { text-decoration-color: var(--color-secondary); }
+
+/* ====== الملاحظات ====== */
+.emptySection { text-align: center; padding: 32px; color: var(--text-muted); font-size: 14px; }
+.noteInputWrapper { display: flex; gap: 8px; margin-bottom: 20px; }
+.notesList { display: flex; flex-direction: column; gap: 12px; max-height: 500px; overflow-y: auto; }
+.noteItem { padding: 14px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--glass-border); border-radius: var(--border-radius-sm); }
+.noteHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.noteAuthor { font-size: 12px; font-weight: 700; color: var(--color-primary); }
+.noteDelete { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); border-radius: 4px; transition: var(--transition-fast); }
+.noteDelete:hover { color: var(--color-danger); background: var(--color-danger-glow); }
+.noteText { font-size: 13px; color: var(--text-main); line-height: 1.6; margin-bottom: 6px; }
+.noteDate { font-size: 11px; color: var(--text-muted); }
+
+/* ====== حالات ====== */
+.stateContainer { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 80px 24px; color: var(--text-muted); }
+.spinner { color: var(--color-primary); animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.errorIcon { color: var(--color-danger); opacity: 0.6; }
+.stateText { font-size: 15px; font-weight: 500; }
+
+/* ====== التجاوب ====== */
+@media (max-width: 1024px) {
+  .contentGrid { grid-template-columns: 1fr; }
+  .sideCol { position: static; }
+}
+
+@media (max-width: 768px) {
+  .profileHeader { flex-direction: column; text-align: center; align-items: center; padding: 24px !important; }
+  .profileBadges { justify-content: center; }
+  .topBar { flex-direction: column; align-items: stretch; }
+  .actionsBar { flex-direction: column; }
+  .actionsBar button { width: 100%; justify-content: center; }
+}

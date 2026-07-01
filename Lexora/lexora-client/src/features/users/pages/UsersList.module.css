@@ -1,0 +1,218 @@
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  transition: var(--transition-fast);
+}
+
+.backBtn:hover {
+  color: var(--color-primary);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+/* بطاقة البحث */
+.searchCard {
+  padding: 16px !important;
+  margin-bottom: 20px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+}
+
+/* بطاقة الجدول */
+.tableCard {
+  padding: 0 !important; /* لإعطاء الجدول مساحة كاملة */
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  overflow: hidden;
+}
+
+/* حالة التحميل */
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 60px 20px;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--color-primary);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* التجاوب وعرض الجدول */
+.tableResponsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: start;
+}
+
+.table th {
+  padding: 16px 24px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--glass-border);
+  text-transform: uppercase;
+  text-align: inherit;
+}
+
+.table td {
+  padding: 16px 24px;
+  font-size: 14px;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.table tbody tr {
+  transition: var(--transition-fast);
+}
+
+.table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.username {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.nameDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.nameText {
+  font-weight: 600;
+}
+
+.emailText {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.roles {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.date {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* شارات الحالة */
+.statusBadge {
+  display: inline-flex;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 9999px;
+}
+
+.badgeActive {
+  background: var(--color-success-glow);
+  color: var(--color-success);
+}
+
+.badgeInactive {
+  background: var(--color-danger-glow);
+  color: var(--color-danger);
+}
+
+/* أزرار الإجراءات داخل السطر */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: var(--border-radius-sm);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  color: var(--text-muted);
+  transition: var(--transition-fast);
+}
+
+.actionBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-primary);
+  border-color: var(--color-primary-glow);
+}
+
+.actionBtnDelete:hover {
+  color: var(--color-danger);
+  border-color: var(--color-danger-glow);
+  background: var(--color-danger-glow);
+}
+
+/* حالة عدم وجود بيانات */
+.emptyState {
+  text-align: center !important;
+  padding: 60px 20px !important;
+  color: var(--text-muted);
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.emptyIcon {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* الترقيم */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-top: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.pageNumber {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-main);
+}

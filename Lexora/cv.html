@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmoud Ahmed Refaay - CV</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --primary-color: #0f172a; /* Slate 900 */
+            --text-color: #334155;    /* Slate 700 */
+            --title-color: #1e293b;   /* Slate 800 */
+            --line-color: #e2e8f0;    /* Slate 200 */
+            --accent-color: #2563eb;  /* Blue 600 */
+            --bg-color: #f1f5f9;      /* Slate 100 */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Floating Action Button for printing */
+        .print-button-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .print-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+            background-color: #1d4ed8;
+        }
+
+        .print-btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Tips Banner */
+        .tips-banner {
+            max-width: 210mm;
+            margin: 20px auto 0 auto;
+            background: #eff6ff;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 13.5px;
+            color: #1e3a8a;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            direction: rtl;
+            text-align: right;
+        }
+
+        .tips-banner h3 {
+            margin: 0 0 8px 0;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .tips-banner ul {
+            margin: 0;
+            padding-right: 20px;
+            padding-left: 0;
+        }
+
+        .tips-banner li {
+            margin-bottom: 5px;
+            color: #1e40af;
+        }
+
+        /* CV Layout */
+        .cv-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0 40px 0;
+        }
+
+        .cv-page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            background-color: #fff;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin: 0 0 4px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .role {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .contact {
+            font-size: 11.5px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .contact a {
+            color: #64748b;
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+
+        .contact a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        /* Sections */
+        .section {
+            margin-top: 16px;
+            width: 100%;
+        }
+
+        .section-title {
+            font-size: 12.5px;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: 1.5px;
+            border-bottom: 1.5px solid var(--primary-color);
+            padding-bottom: 3px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin: 0 0 8px 0;
+            font-size: 12px;
+            line-height: 1.45;
+            color: var(--text-color);
+        }
+
+        /* Projects */
+        .project {
+            margin-bottom: 12px;
+        }
+
+        .project:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .project-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .project-type {
+            font-size: 11.5px;
+            font-style: italic;
+            color: #64748b;
+        }
+
+        .tech {
+            font-size: 11px;
+            color: #475569;
+            margin: 2px 0 4px 0;
+            font-weight: 500;
+        }
+
+        .source-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .source-link:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 16px;
+        }
+
+        li {
+            font-size: 12px;
+            color: var(--text-color);
+            margin-bottom: 3px;
+            line-height: 1.4;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 10px;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 13px;
+        }
+
+        .education-location {
+            font-weight: 400;
+            font-size: 11px;
+            color: #64748b;
+        }
+
+        .education-date {
+            font-weight: 400;
+            font-size: 11px;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .education-degree {
+            font-size: 12px;
+            color: var(--text-color);
+            margin-top: 1px;
+        }
+
+        .education-roadmap {
+            font-size: 12px;
+            color: var(--text-color);
+            margin-top: 1px;
+            font-weight: 600;
+        }
+
+        /* Skills specific */
+        .skills-container p {
+            margin-bottom: 4px;
+        }
+
+        /* Print Styles */
+        @media print {
+            @page {
+                size: A4;
+                margin: 20mm 20mm 15mm 20mm; /* Margin for each printed page */
+            }
+            
+            body {
+                background-color: #fff;
+                color: #000;
+            }
+            
+            .no-print {
+                display: none !important;
+            }
+            
+            .cv-container {
+                padding: 0;
+                width: 100%;
+            }
+            
+            .cv-page {
+                width: 100%;
+                min-height: 0;
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+                border-radius: 0;
+                background: transparent;
+            }
+            
+            .project, .education-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .contact a, .source-link {
+                color: #000;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Print Button (Screen only) -->
+    <div class="print-button-container no-print">
+        <button class="print-btn" onclick="window.print()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Print CV (طباعة)
+        </button>
+    </div>
+
+    <!-- Print Instructions Banner (Screen only) -->
+    <div class="tips-banner no-print">
+        <h3>💡 نصائح للحصول على طباعة PDF مثالية واحترافية:</h3>
+        <ul>
+            <li>عند الضغط على زر <b>Print CV</b> ستفتح نافذة الطباعة الخاصة بالمتصفح.</li>
+            <li>في إعدادات الطباعة، تأكد من إيقاف خيار <b>"Headers and footers" (الرؤوس والتذييلات)</b> لإخفاء رابط الملف والتاريخ.</li>
+            <li>تأكد من ضبط حجم الورق على <b>A4</b> والهوامش على <b>Default (الافتراضي)</b> أو <b>None (بلا)</b>.</li>
+            <li>تأكد من تفعيل خيار <b>"Background graphics" (رسومات الخلفية)</b> لتظهر الألوان بشكل صحيح.</li>
+        </ul>
+    </div>
+
+    <div class="cv-container">
+        <!-- SINGLE CONTINUOUS CV PAGE -->
+        <div class="cv-page">
+            <div class="header">
+                <h1>Mahmoud Ahmed Refaay</h1>
+                <div class="role">Junior .NET Developer</div>
+                <div class="contact">
+                    Sohag, Egypt • 
+                    <a href="mailto:mahmoudahmedkhalfallah@gmail.com">mahmoudahmedkhalfallah@gmail.com</a> • 
+                    <a href="https://linkedin.com/in/mahmoud-ahmed-refaay" target="_blank">linkedin.com/in/mahmoud-ahmed-refaay</a><br>
+                    <a href="https://github.com/mahmoud-refaay" target="_blank">github.com/mahmoud-refaay</a> • 
+                    <a href="https://mahmoud-refay.site" target="_blank">mahmoud-refay.site</a> • 
+                    <span>+20 101 603 7787</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Summary</div>
+                <p>
+                   Junior Backend .NET Developer with hands-on experience building ASP.NET Core Web APIs, SQL Server databases, and desktop applications using C#. Passionate about designing scalable backend systems, clean architecture, and RESTful APIs. Seeking an opportunity to contribute to real-world software projects while continuously growing as a backend engineer.
+                </p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Skills</div>
+                <div class="skills-container">
+                    <p><b>Core:</b> .NET • C# • WinForms • ASP.NET Core Web API • SQL Server • T-SQL • ADO.NET • Dapper ORM • Stored Procedures • RESTful APIs • Authentication & Authorization (JWT, RBAC, Policy-Based) • OOP / SOLID • 3-Tier Architecture • Data Structures • Algorithms • Git • GitHub • Visual Studio • Postman</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Projects</div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">DVLD (Driving & Vehicle License Department)</span>
+                        <span class="project-type">Desktop Application</span>
+                    </div>
+                    <div class="tech">
+                        C# • .NET • WinForms • SQL Server • ADO.NET • Stored Procedures • 
+                        <a href="https://github.com/mahmoud-refaay/DVLD" target="_blank" class="source-link">Source</a>
+                    </div>
+                    <ul>
+                        <li>Developed a complete licensing system using C# WinForms with Three-Tier Architecture.</li>
+                        <li>Designed a relational SQL Server database with 14 tables, 27 relationships, and 50+ stored procedures.</li>
+                        <li>Automated applicant registration, test scheduling, license issuance, renewal, replacement, and detention workflows.</li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">Lexora — Law Office Management System</span>
+                        <span class="project-type">Full-Stack Web Application</span>
+                    </div>
+                    <div class="tech">
+                        ASP.NET Core 10 • React 19 • TypeScript • SQL Server • Dapper ORM • JWT Authentication • Clean Architecture • 
+                        <a href="https://github.com/mahmoud-refaay" target="_blank" class="source-link">Source</a>
+                    </div>
+                    <ul>
+                        <li>Designed and developed a comprehensive legal practice management system for law firms using Clean Architecture principles.</li>
+                        <li>Built full-stack solution with ASP.NET Core Web API backend and React TypeScript frontend with multi-language support (Arabic/English).</li>
+                        <li>Implemented modules for client management, case tracking, hearing scheduling, legal document management, task assignment, and payment tracking.</li>
+                        <li>Integrated JWT authentication with role-based authorization (Admin, Lawyer, Secretary, Accountant) and comprehensive audit logging.</li>
+                        <li>Developed RESTful APIs with Dapper ORM and stored procedures, created interactive dashboard with statistics and reports.</li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">Aura AI — AI Image Generator</span>
+                        <span class="project-type">Desktop Application</span>
+                    </div>
+                    <div class="tech">
+                        C# • .NET • WinForms • SQL Server • ADO.NET • Stored Procedures • REST APIs • 
+                        <a href="https://github.com/mahmoud-refaay/Aura-AI" target="_blank" class="source-link">Source</a>
+                    </div>
+                    <ul>
+                        <li>Built an AI-powered image generation app supporting multiple providers (HuggingFace, Stability, Google, OpenAI) with automatic fallback handling.</li>
+                        <li>Developed a theming engine, gallery management system, albums, favorites, backup/restore, and prompt history tracking.</li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-title">Salati — Islamic Prayer Times & Azkar</span>
+                        <span class="project-type">Desktop Application</span>
+                    </div>
+                    <div class="tech">
+                        C# • .NET • WinForms • SQL Server • Dapper ORM • Aladhan API • NAudio • 
+                        <a href="https://github.com/mahmoud-refaay/Salati" target="_blank" class="source-link">Source</a>
+                    </div>
+                    <ul>
+                        <li>Developed an Islamic desktop app for prayer times, Azkar, and Adhan notifications using the Aladhan API with automatic geolocation.</li>
+                        <li>Designed a SQL Server database with 10 tables and 57 stored procedures to manage Azkar and user preferences.</li>
+                        <li>Delivered production-ready deployment via Inno Setup with system tray integration and widget mode.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Education</div>
+                
+                <div class="education-item">
+                    <div class="education-header">
+                        <span>Higher Institute of Electronic Commerce — Sohag</span>
+                        <span class="education-location">Sohag, Egypt</span>
+                    </div>
+                    <div class="education-degree">BS in Electronic Commerce</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-header">
+                        <span>ProgrammingAdvices.com — Programming Roadmap</span>
+                        <span class="education-date">2022 – Present</span>
+                    </div>
+                    <div class="education-roadmap">
+                        Eng. Abu Hadhoud • 24 of 24 Core Courses Completed + Introduction to RESTful API
+                    </div>
+                    <ul>
+                        <li>Programming Fundamentals & Problem Solving</li>
+                        <li>Data Structures & Algorithms</li>
+                        <li>C# Programming (Beginner to Advanced)</li>
+                        <li>SQL Server, T-SQL, Stored Procedures & Database Design</li>
+                        <li>OOP & SOLID Principles</li>
+                        <li>ADO.NET & Database Connectivity</li>
+                        <li>RESTful API Fundamentals</li>
+                        <li>Full Real-World Project Development (DVLD)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Additional Information</div>
+                <ul>
+                    <li><b>Languages:</b> Arabic (Native), English (Basic, improving).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,329 @@
+.appContainer {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* القائمة الجانبية (شريط التحكم) - تدعم الاتجاهين ديناميكياً */
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  left: 0; /* Always fixed to the left */
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  z-index: 100;
+  border-radius: 0;
+  border-right: 1px solid rgba(192, 149, 84, 0.15); /* Bronze border on the right edge */
+  background-image: linear-gradient(180deg, rgba(3, 5, 8, 0.68) 0%, rgba(3, 5, 8, 0.48) 60%, rgba(3, 5, 8, 0.1) 100%), url('/images/bg_sidebar.png');
+  background-size: cover;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* الأزرار التفاعلية الجانبية */
+.sidebarActions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.actionBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+}
+
+.actionBtn:hover {
+  background: rgba(192, 149, 84, 0.08);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.brand {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-bottom: 32px;
+  padding: 0 8px;
+}
+
+.brandLogo3d {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(192, 149, 84, 0.55));
+  transition: transform var(--transition-normal);
+}
+
+.brandLogo3d:hover {
+  transform: rotate(-10deg) scale(1.05);
+}
+
+.brandTextWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: end;
+  gap: 2px;
+}
+
+.brandText {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: 1px;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.brandSubtext {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--color-primary);
+  opacity: 0.85;
+  line-height: 1.1;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 12px;
+  padding-inline-end: 4px;
+}
+
+/* تخصيص شريط تمرير القائمة الجانبية */
+.nav::-webkit-scrollbar {
+  width: 3px;
+}
+.nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+.nav::-webkit-scrollbar-thumb {
+  background: rgba(192, 149, 84, 0.15);
+  border-radius: 4px;
+}
+.nav::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 42px;
+  padding: 0 14px;
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: var(--transition-smooth);
+  box-sizing: border-box;
+}
+
+.navLink svg {
+  color: var(--color-primary) !important; /* All menu icons in Gold */
+  transition: all var(--transition-fast);
+}
+
+.navLink:hover {
+  background: rgba(192, 149, 84, 0.06);
+  color: var(--text-primary);
+  border-color: rgba(192, 149, 84, 0.15);
+}
+
+.activeLink {
+  background: linear-gradient(90deg, rgba(192, 149, 84, 0.18) 0%, rgba(192, 149, 84, 0.04) 100%) !important;
+  color: var(--color-primary) !important;
+  border: 1px solid rgba(192, 149, 84, 0.55) !important;
+  box-shadow: 0 4px 20px rgba(192, 149, 84, 0.15);
+  font-weight: 700;
+}
+
+.activeLink::after {
+  content: '›';
+  margin-left: auto;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-top: -2px;
+  transition: transform var(--transition-fast);
+}
+
+:global(html[lang="ar"]) .activeLink::after {
+  content: '‹';
+}
+
+/* حاوية تمثال العدالة */
+.sidebarFooter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.supportButton {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 14px;
+  background: rgba(192, 149, 84, 0.08);
+  border: 1px solid rgba(192, 149, 84, 0.25);
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.supportButton:hover {
+  background: var(--color-primary);
+  color: var(--text-inverse);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(192, 149, 84, 0.25);
+}
+
+.logoutBtnCompact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border-radius: var(--radius-md);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.logoutBtnCompact:hover {
+  background: var(--color-danger);
+  color: white;
+  border-color: var(--color-danger);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.25);
+}
+
+/* حاوية المحتوى الرئيسي - تتكيف مع الاتجاهين ديناميكياً */
+.contentArea {
+  margin-left: var(--sidebar-width); /* Always leave space on the left */
+  margin-right: 0;
+  flex-grow: 1;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+/* صورة تمثال العدالة الجانبية */
+.ladyJusticeDecoration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 150px;
+  height: auto;
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: 1;
+  transform: translateY(20px);
+}
+
+/* ====== التجاوب ====== */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+  }
+
+  :root {
+    --sidebar-width: 240px;
+  }
+
+  .contentArea {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 72px;
+    padding: 20px 10px;
+  }
+
+  :root {
+    --sidebar-width: 72px;
+  }
+
+  .brand {
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .brandTextWrapper {
+    display: none;
+  }
+
+  .navLink {
+    justify-content: center;
+    padding: 0;
+    height: 44px;
+  }
+
+  .navLink span {
+    display: none;
+  }
+
+  .navLink svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .activeLink::after {
+    display: none;
+  }
+
+  .supportButton span {
+    display: none;
+  }
+
+  .supportButton {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .ladyJusticeDecoration {
+    display: none;
+  }
+
+  .contentArea {
+    padding: 20px 16px;
+  }
+}

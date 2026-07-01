@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.switch {
+  width: 44px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
+  border-radius: 9999px;
+  position: relative;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.checked {
+  background: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.thumb {
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  inset-inline-start: 2px;
+  transition: transform var(--transition-fast);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* حركة المفتاح الجانبية بالتوافق مع اتجاه الصفحة */
+.checked .thumb {
+  transform: translateX(20px);
+}
+
+/* عكس الحركة في حالة اتجاه LTR */
+:global([dir="ltr"]) .checked .thumb {
+  transform: translateX(20px);
+}
+
+:global([dir="rtl"]) .checked .thumb {
+  transform: translateX(-20px);
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}

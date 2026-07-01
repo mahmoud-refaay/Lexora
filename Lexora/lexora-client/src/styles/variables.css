@@ -1,0 +1,60 @@
+/* استيراد الخطوط الرسمية للنظام */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* الخطوط الافتراضية للغات */
+  --font-arabic: 'Cairo', sans-serif;
+  --font-english: 'Outfit', sans-serif;
+  
+  /* لوحة الألوان الأساسية - الذهبي الفاخر المعتمد في التصاميم */
+  --color-primary: #c09554;
+  --color-primary-glow: rgba(192, 149, 84, 0.15);
+  --color-primary-hover: #a87e3e;
+  
+  --color-secondary: #0ea5e9; /* أزرق سماوي نيون */
+  --color-secondary-glow: rgba(14, 165, 233, 0.15);
+  
+  --color-success: #10b981; /* أخضر نيون */
+  --color-success-glow: rgba(16, 185, 129, 0.15);
+  
+  --color-danger: #ef4444; /* أحمر نيون */
+  --color-danger-glow: rgba(239, 68, 68, 0.15);
+  
+  --color-warning: #f59e0b; /* برتقالي نيون */
+  --color-warning-glow: rgba(245, 158, 11, 0.15);
+
+  /* درجات السطوع والخلفيات للوضع الداكن الافتراضي */
+  --bg-main: #05080e;
+  --bg-gradient: radial-gradient(circle at 50% 50%, #090e1a 0%, #030508 100%);
+  
+  /* خصائص الزجاج Glassmorphic Card */
+  --glass-bg: rgba(13, 19, 31, 0.7);
+  --glass-border: rgba(192, 149, 84, 0.22);
+  --glass-border-focus: rgba(192, 149, 84, 0.35);
+  --glass-shadow: 0 12px 40px rgba(192, 149, 84, 0.18), 0 8px 32px rgba(0, 0, 0, 0.5);
+  --glass-blur: 16px;
+
+  /* نصوص النظام */
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --text-inverse: #0b0f19;
+  
+  /* قياسات وتأثيرات الهيكل */
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  
+  /* قياسات الشاشات والملاحة */
+  --sidebar-width: 280px;
+}
+
+/* تعديل الخط ديناميكياً بناءً على اتجاه الصفحة ولغة النظام */
+html[lang="ar"] {
+  font-family: var(--font-arabic);
+}
+
+html[lang="en"] {
+  font-family: var(--font-english);
+}

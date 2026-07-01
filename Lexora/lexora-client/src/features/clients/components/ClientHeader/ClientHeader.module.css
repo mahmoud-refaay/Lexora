@@ -1,0 +1,113 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid var(--glass-border);
+  margin-bottom: 20px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.breadcrumbLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: transparent;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.breadcrumbLink:hover {
+  color: var(--color-primary);
+  background: rgba(192, 149, 84, 0.08);
+}
+
+.breadcrumbSeparator {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.currentPage {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.headerActions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.iconButton {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconButton:hover {
+  background: rgba(192, 149, 84, 0.1);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.editButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: linear-gradient(135deg, var(--color-primary), rgba(192, 149, 84, 0.8));
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-inverse);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: inherit;
+  box-shadow: 0 2px 8px rgba(192, 149, 84, 0.25);
+}
+
+.editButton:hover {
+  background: linear-gradient(135deg, rgba(192, 149, 84, 0.9), rgba(192, 149, 84, 0.7));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(192, 149, 84, 0.35);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .headerActions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .breadcrumb {
+    flex-wrap: wrap;
+  }
+}

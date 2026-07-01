@@ -1,0 +1,133 @@
+.dashboardContainer {
+  width: 100%;
+  color: var(--text-main);
+}
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+  direction: ltr !important;
+}
+
+/* المساحة الرئيسية اليسرى */
+.mainContentArea {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+:global(html[dir="rtl"]) .mainContentArea {
+  direction: rtl;
+}
+
+/* الصف الأول: الترحيب و 3 كروت مدمجة */
+.rowWelcomeStats {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+/* الصف الثاني: 4 كروت إحصائيات عامة */
+.rowGeneralStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+/* الصف الثالث: دونت + قائمة + نشاطات */
+.rowMiddleWidgets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* الصف الرابع: إجراءات سريعة + نظرة مالية */
+.rowBottomActions {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.quickActionsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: start;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(10, 15, 28, 0.45) 0%, rgba(4, 7, 12, 0.6) 100%) !important;
+  border: 1px solid rgba(192, 149, 84, 0.2) !important;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--glass-shadow);
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 2px;
+}
+
+.quickActionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.financialSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+/* الشريط الجانبي الأيمن */
+.rightSidebarArea {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 24px;
+}
+
+:global(html[dir="rtl"]) .rightSidebarArea {
+  direction: rtl;
+}
+
+/* شاشات التجاوب (Responsive Breakpoints) */
+@media (max-width: 1400px) {
+  .dashboardGrid {
+    grid-template-columns: 1fr; /* Sidebar wraps below on smaller desktops/tablets */
+  }
+  .rightSidebarArea {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 1200px) {
+  .rowMiddleWidgets {
+    grid-template-columns: 1fr;
+  }
+  .rowWelcomeStats {
+    grid-template-columns: 1fr;
+  }
+  .rowBottomActions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .rightSidebarArea {
+    grid-template-columns: 1fr;
+  }
+  .rowGeneralStats {
+    grid-template-columns: 1fr;
+  }
+  .quickActionsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

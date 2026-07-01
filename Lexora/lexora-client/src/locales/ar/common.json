@@ -1,0 +1,62 @@
+{
+  "buttons": {
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "deactivate": "تعطيل",
+    "activate": "تفعيل",
+    "loading": "جاري التحميل...",
+    "login": "تسجيل الدخول",
+    "logout": "تسجيل الخروج",
+    "change_password": "تغيير كلمة المرور",
+    "add_user": "إضافة مستخدم"
+  },
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "users": "إدارة المستخدمين",
+    "settings": "الإعدادات",
+    "clients": "العملاء",
+    "cases": "القضايا",
+    "sessions": "الجلسات",
+    "tasks": "المهام",
+    "documents": "المستندات",
+    "finance": "المالية",
+    "reports": "التقارير",
+    "support": "الدعم والمساعدة"
+  },
+  "theme": {
+    "dark": "الوضع الداكن",
+    "light": "الوضع المضيء"
+  },
+  "language": {
+    "ar": "العربية",
+    "en": "English"
+  },
+  "messages": {
+    "error_occurred": "حدث خطأ غير متوقع. الرجاء المحاولة لاحقاً."
+  },
+  "dashboard": {
+    "greeting_morning": "صباح الخير",
+    "greeting_afternoon": "مساء الخير",
+    "greeting_welcome": "مرحباً بك",
+    "role_senior": "محامي أول",
+    "search_placeholder": "ابحث عن قضية، عميل، أو جلسة...",
+    "stat_cases": "إجمالي القضايا",
+    "stat_sessions": "جلسات اليوم",
+    "stat_clients": "العملاء النشطون",
+    "stat_tasks": "المهام المعلقة",
+    "stat_revenue": "إجمالي الإيرادات",
+    "cases_followup": "قضايا تحتاج متابعة",
+    "recent_activities": "آخر العمليات والنشاطات",
+    "financial_overview": "الخلاصة المالية العامة",
+    "monthly_calendar": "التقويم الشهري",
+    "today_sessions": "جلسات اليوم ومواعيدها",
+    "action_add_case": "إضافة قضية جديدة",
+    "action_add_client": "إضافة عميل جديد",
+    "action_add_session": "تسجيل جلسة محكمة",
+    "action_add_doc": "رفع مستند قانوني",
+    "action_add_task": "إنشاء مهمة عمل",
+    "action_finance": "معاملة مالية جديدة"
+  }
+}

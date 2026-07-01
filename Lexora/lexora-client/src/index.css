@@ -1,0 +1,128 @@
+@import './styles/variables.css';
+
+:root {
+  /* خرائط التوافقية للملفات القديمة قبل إعادة هيكلتها بالكامل */
+  --bg-primary: var(--bg-main);
+  --bg-secondary: rgba(17, 24, 39, 0.75);
+  --bg-tertiary: #1f2937;
+  --bg-glass: var(--glass-bg);
+  --border-glass: var(--glass-border);
+  --border-glass-glow: var(--glass-border-focus);
+  
+  --text-primary: var(--text-main);
+  --text-secondary: var(--text-muted);
+  --text-muted: #6b7280;
+  
+  --radius-lg: var(--border-radius-lg);
+  --radius-md: var(--border-radius-md);
+  --radius-sm: var(--border-radius-sm);
+  
+  --shadow-lg: var(--glass-shadow);
+  --transition-smooth: all var(--transition-normal);
+}
+
+/* التنسيق الأساسي وإلغاء الافتراضيات */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-tertiary) var(--bg-primary);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: inherit;
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* تنسيق شريط التمرير */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* عناصر الإدخال والأزرار الافتراضية */
+input, select, textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* تأثير الخلفية المتوهجة الفاخرة باللون الذهبي الخافت والأسود */
+.cyber-bg-glow {
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(192, 149, 84, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(192, 149, 84, 0.02) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, #05080e 0%, #030407 100%);
+  pointer-events: none;
+}
+
+/* تأثيرات الزجاج (Glassmorphism) */
+.glass-panel {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-smooth);
+  box-shadow: none;
+}
+
+.glass-panel:hover {
+  border-color: var(--border-glass-glow);
+  box-shadow: var(--shadow-lg);
+}
+
+/* تأثير الكتابة أو الحركة للبطاقات */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* تصميم اتجاه الصفحة باللغة العربية الافتراضية */
+[dir="rtl"] {
+  text-align: right;
+}
+
+/* أنماط عامة للتحكم في العرض */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}

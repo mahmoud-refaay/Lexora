@@ -1,0 +1,62 @@
+{
+  "buttons": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "deactivate": "Deactivate",
+    "activate": "Activate",
+    "loading": "Loading...",
+    "login": "Login",
+    "logout": "Logout",
+    "change_password": "Change Password",
+    "add_user": "Add User"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "users": "Users Management",
+    "settings": "Settings",
+    "clients": "Clients",
+    "cases": "Cases",
+    "sessions": "Sessions",
+    "tasks": "Tasks",
+    "documents": "Documents",
+    "finance": "Finance",
+    "reports": "Reports",
+    "support": "Support & Help"
+  },
+  "theme": {
+    "dark": "Dark Mode",
+    "light": "Light Mode"
+  },
+  "language": {
+    "ar": "العربية",
+    "en": "English"
+  },
+  "messages": {
+    "error_occurred": "An unexpected error occurred. Please try again later."
+  },
+  "dashboard": {
+    "greeting_morning": "Good morning",
+    "greeting_afternoon": "Good afternoon",
+    "greeting_welcome": "Welcome",
+    "role_senior": "Senior Lawyer",
+    "search_placeholder": "Search cases, clients, sessions...",
+    "stat_cases": "Total Cases",
+    "stat_sessions": "Sessions Today",
+    "stat_clients": "Active Clients",
+    "stat_tasks": "Pending Tasks",
+    "stat_revenue": "Total Revenues",
+    "cases_followup": "Cases Needing Follow-up",
+    "recent_activities": "Recent Activities & Logs",
+    "financial_overview": "Financial Overview",
+    "monthly_calendar": "Monthly Calendar",
+    "today_sessions": "Today's Sessions",
+    "action_add_case": "Add New Case",
+    "action_add_client": "Add Client",
+    "action_add_session": "Register Session",
+    "action_add_doc": "Upload Document",
+    "action_add_task": "Create Task",
+    "action_finance": "Financial Transaction"
+  }
+}

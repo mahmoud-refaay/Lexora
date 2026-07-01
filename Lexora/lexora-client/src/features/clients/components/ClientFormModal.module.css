@@ -1,0 +1,167 @@
+.form { display: flex; flex-direction: column; gap: 24px; }
+
+.errorAlert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--border-radius-sm);
+  color: #f87171;
+  font-size: 13px;
+}
+
+.fieldGroup { display: flex; flex-direction: column; gap: 8px; }
+
+.fieldLabel { font-size: 13px; font-weight: 600; color: var(--text-main); }
+
+.typeGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+
+.typeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.typeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-sm);
+  flex-shrink: 0;
+}
+
+.typeContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.typeLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.typeDesc {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.typeCard:hover { border-color: var(--color-primary); color: var(--color-primary); }
+.typeActive { border-color: var(--color-primary); background: var(--color-primary-glow); color: var(--color-primary); }
+
+.radioHidden { display: none; }
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.fullWidth { grid-column: 1 / -1; }
+
+.notesGroup { display: flex; flex-direction: column; gap: 8px; }
+
+.textarea {
+  width: 100%;
+  padding: 12px;
+  background: rgba(10, 15, 26, 0.5);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-main);
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  transition: var(--transition-fast);
+  box-sizing: border-box;
+}
+
+.textarea:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-glow); }
+
+.selectGroup { display: flex; flex-direction: column; gap: 8px; }
+
+.selectWrapper {
+  position: relative;
+}
+
+.select {
+  width: 100%;
+  padding: 10px 12px;
+  padding-right: 36px;
+  background: rgba(10, 15, 26, 0.5);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-main);
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  appearance: none;
+}
+
+.select:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-glow); }
+
+.selectIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.statusGrid { display: flex; gap: 8px; }
+
+.statusChip {
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.statusChip:hover { color: var(--color-primary); border-color: var(--color-primary); }
+.statusActive { color: var(--color-primary); background: var(--color-primary-glow); border-color: var(--color-primary); }
+
+.actions { display: flex; gap: 12px; justify-content: flex-end; }
+
+@media (max-width: 600px) {
+  .typeGrid { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr; }
+  .actions { flex-direction: column-reverse; }
+  .actions button { width: 100%; justify-content: center; }
+}

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "0coNgEh7Xvo=",
+  "success": true,
+  "projectFilePath": "E:\\Projects\\Lexora\\Lexora\\Lexora\\Application\\Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mahmo\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\10.0.0\\microsoft.extensions.caching.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\mahmo\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.0\\microsoft.extensions.primitives.10.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,162 @@
+.chartPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  transition: all var(--transition-normal);
+  height: 290px;
+  box-sizing: border-box;
+}
+
+.chartPanel:hover {
+  border-color: var(--glass-border-focus);
+  box-shadow: var(--glass-shadow);
+}
+
+.panelTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  text-align: start;
+}
+
+.chartContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.chartVisual {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+}
+
+.donutSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.donutSegment {
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+.donutInnerCircle {
+  fill: #0d1222;
+}
+
+.chartCenterText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chartCenterNum {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1;
+  font-family: var(--font-english);
+}
+
+:global(html[lang="ar"]) .chartCenterNum {
+  font-family: var(--font-arabic);
+}
+
+.chartCenterLbl {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.chartLegend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-main);
+}
+
+.legendColor {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-inline-end: 10px;
+  flex-shrink: 0;
+}
+
+.legendName {
+  flex-grow: 1;
+  text-align: start;
+}
+
+.legendValue {
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-inline-start: 10px;
+  font-family: var(--font-english);
+}
+
+:global(html[lang="ar"]) .legendValue {
+  font-family: var(--font-arabic);
+}
+
+.panelLink {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-top: 20px;
+  cursor: pointer;
+  width: fit-content;
+  transition: all var(--transition-fast);
+}
+
+.panelLink:hover {
+  color: var(--color-primary-hover);
+}
+
+.arrowIcon {
+  transition: transform var(--transition-fast);
+}
+
+:global(html[dir="ltr"]) .arrowIcon {
+  transform: scaleX(-1);
+}
+
+.panelLink:hover .arrowIcon {
+  transform: translateX(-4px);
+}
+
+:global(html[dir="ltr"]) .panelLink:hover .arrowIcon {
+  transform: scaleX(-1) translateX(-4px);
+}
+
+@media (max-width: 576px) {
+  .chartContent {
+    flex-direction: column;
+    align-items: center;
+  }
+  .chartLegend {
+    width: 100%;
+  }
+}

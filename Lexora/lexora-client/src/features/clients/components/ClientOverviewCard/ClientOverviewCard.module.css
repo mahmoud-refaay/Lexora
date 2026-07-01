@@ -1,0 +1,345 @@
+/* ===== ClientOverviewCard - Premium Legal CRM Design ===== */
+
+.overviewCard {
+  background: #091321;
+  border: 1px solid rgba(212, 163, 84, 0.18);
+  border-radius: 20px;
+  padding: 32px 40px;
+  height: 260px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.overviewCard:hover {
+  border-color: rgba(212, 163, 84, 0.3);
+  box-shadow: 0 8px 32px rgba(212, 163, 84, 0.15);
+}
+
+.cardContent {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 40px;
+}
+
+/* ===== Left Section (70%) ===== */
+
+.leftSection {
+  flex: 70%;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.avatarWrapper {
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(135deg, rgba(212, 163, 84, 0.15), rgba(212, 163, 84, 0.05));
+  border: 2px solid rgba(212, 163, 84, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(212, 163, 84, 0.9);
+  box-shadow: 0 0 32px rgba(212, 163, 84, 0.2);
+  transition: all 0.3s ease;
+}
+
+.avatar:hover {
+  box-shadow: 0 0 48px rgba(212, 163, 84, 0.3);
+  transform: scale(1.02);
+}
+
+.clientInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.clientName {
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.clientType {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.contactRow {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 163, 84, 0.1);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.contactItem:hover {
+  background: rgba(212, 163, 84, 0.08);
+  border-color: rgba(212, 163, 84, 0.25);
+}
+
+.contactIcon {
+  color: rgba(212, 163, 84, 0.8);
+}
+
+.contactValue {
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.metaRow {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.metaBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(212, 163, 84, 0.12);
+  border-radius: 20px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.metaIcon {
+  color: rgba(212, 163, 84, 0.8);
+}
+
+.metaValue {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(31, 167, 90, 0.12);
+  border: 1px solid rgba(31, 167, 90, 0.25);
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1fa75a;
+  margin-top: 12px;
+  align-self: flex-start;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 12px currentColor;
+}
+
+.statusDot.status_Active {
+  background: #1fa75a;
+}
+
+.statusDot.status_Inactive {
+  background: #f59e0b;
+}
+
+.statusDot.status_Archived {
+  background: #6b7280;
+}
+
+/* ===== Vertical Divider ===== */
+
+.divider {
+  width: 1px;
+  height: 80%;
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    rgba(212, 163, 84, 0.2) 20%, 
+    rgba(212, 163, 84, 0.2) 80%, 
+    transparent 100%
+  );
+  flex-shrink: 0;
+  margin: 0 32px;
+}
+
+/* ===== Right Section (30%) ===== */
+
+.rightSection {
+  flex: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+.statCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 163, 84, 0.15);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 100px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.statCard:hover {
+  background: rgba(212, 163, 84, 0.08);
+  border-color: rgba(212, 163, 84, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(212, 163, 84, 0.15);
+}
+
+.statIconWrapper {
+  width: 44px;
+  height: 44px;
+  background: rgba(212, 163, 84, 0.1);
+  border: 1px solid rgba(212, 163, 84, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.statIcon {
+  color: rgba(212, 163, 84, 0.9);
+}
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.statValue {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+/* ===== Responsive Design ===== */
+
+@media (max-width: 1024px) {
+  .overviewCard {
+    height: auto;
+    min-height: 300px;
+  }
+  
+  .cardContent {
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .leftSection {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .divider {
+    width: 80%;
+    height: 1px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(212, 163, 84, 0.2) 20%, 
+      rgba(212, 163, 84, 0.2) 80%, 
+      transparent 100%
+    );
+  }
+  
+  .rightSection {
+    width: 100%;
+  }
+  
+  .contactRow {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .metaRow {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .overviewCard {
+    padding: 24px;
+    border-radius: 18px;
+  }
+  
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .clientName {
+    font-size: 28px;
+  }
+  
+  .clientType {
+    font-size: 15px;
+  }
+  
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .statCard {
+    height: 90px;
+    padding: 12px;
+  }
+  
+  .statValue {
+    font-size: 32px;
+  }
+  
+  .statLabel {
+    font-size: 14px;
+  }
+}

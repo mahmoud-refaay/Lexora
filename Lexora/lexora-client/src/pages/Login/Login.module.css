@@ -1,0 +1,545 @@
+.loginPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  /* Asymmetric gradient: lighter on the left to reveal statue/book, darker on the right to read login card */
+  background-image: 
+    linear-gradient(
+      to right, 
+      rgba(7, 10, 19, 0.4) 0%, 
+      rgba(10, 14, 23, 0.85) 100%
+    ), 
+    url('/images/bg_login.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+
+.splitLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-grow: 1;
+  min-height: calc(100vh - 200px);
+  padding: 0 8%;
+  align-items: center;
+  direction: ltr !important; /* Force fixed columns: promo left, card right */
+}
+
+/* القسم الأيسر الترويجي */
+.leftPane {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  color: #ffffff;
+}
+
+.leftPaneContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 500px;
+}
+
+.promoBrand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  direction: ltr !important; /* Keep brand text on left and scale icon on right */
+}
+
+.mizanLogoSvg {
+  width: 52px;
+  height: 52px;
+  filter: drop-shadow(0 0 12px var(--color-primary-glow));
+}
+
+.promoBrandText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.brandTitle {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+
+.brandSubtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: 3px;
+  line-height: 1.1;
+  opacity: 0.9;
+}
+
+.promoTextWrapper {
+  max-width: 480px;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.promoTitle {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  min-height: 84px;
+}
+
+.promoDesc {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  min-height: 54px;
+}
+
+.promoFooter {
+  height: 20px;
+}
+
+/* القسم الأيمن: كرت تسجيل الدخول */
+.rightPane {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.langToggleBtn {
+  position: absolute;
+  top: 24px;
+  right: 24px; /* Fixed to the top right corner of the page */
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(13, 20, 35, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all var(--transition-fast) ease;
+  backdrop-filter: blur(10px);
+}
+
+.langToggleBtn:hover {
+  background: rgba(192, 149, 84, 0.1);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  box-shadow: 0 0 10px var(--color-primary-glow);
+}
+
+.formContainer {
+  width: 100%;
+  max-width: 430px;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.loginCard {
+  padding: 48px 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(18, 24, 38, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 24px 64px -16px rgba(0, 0, 0, 0.7);
+}
+
+.formHeader {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  white-space: nowrap;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  min-height: 22px;
+}
+
+.errorAlert {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: shake 0.4s ease-in-out;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* تنسيق حقول الإدخال الخاصة بتسجيل الدخول */
+.loginInputWrapper {
+  margin-bottom: 4px;
+}
+
+.loginInputWrapper label {
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 650;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.loginInputWrapper input {
+  height: 48px;
+  background: rgba(10, 15, 26, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  text-align: left !important; /* Email and Password values are LTR */
+  transition: all var(--transition-fast) ease !important;
+  padding-inline-start: 42px !important;
+}
+
+.loginInputWrapper input:focus {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px var(--color-primary-glow) !important;
+  background: rgba(10, 15, 26, 0.7) !important;
+}
+
+.loginInputWrapper :focus-within svg {
+  color: var(--color-primary) !important;
+}
+
+.loginInputWrapper input::placeholder {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.extraOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-top: -6px;
+  direction: ltr !important; /* Forces checkbox left, forgot link right */
+}
+
+.rememberMeLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+  direction: ltr !important; /* Keep checkbox on the left of label text */
+}
+
+.rememberCheckbox {
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+}
+
+.forgotLink {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.forgotLink:hover {
+  text-shadow: 0 0 8px var(--color-primary-glow);
+  text-decoration: underline;
+}
+
+.submitBtn {
+  margin-top: 10px;
+  font-weight: 700;
+  background: var(--color-primary) !important;
+  color: #ffffff !important; /* Ensure white text */
+  border: 1px solid var(--color-primary) !important;
+  height: 48px;
+  padding: 0 !important;
+  border-radius: 8px !important;
+  transition: all var(--transition-normal) ease !important;
+}
+
+.submitBtn:hover {
+  background: var(--color-primary-hover) !important;
+  box-shadow: 0 4px 20px var(--color-primary-glow) !important;
+}
+
+.btnContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+.btnArrow {
+  position: absolute;
+  inset-inline-end: 8px; /* Places it on the left in RTL, right in LTR */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px;
+  color: #ffffff;
+}
+
+.btnText {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.divider span {
+  padding: 0 12px;
+}
+
+.socialButtons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.socialBtn {
+  width: 54px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 15, 26, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-fast) ease;
+}
+
+.socialBtn:hover {
+  background: rgba(192, 149, 84, 0.08);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* السطر السفلي للأمان */
+.loginFooter {
+  background: rgba(6, 9, 17, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 24px 8% 16px;
+  margin-top: auto;
+  z-index: 5;
+}
+
+.footerInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.badgesContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  max-width: 1200px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 20px;
+}
+
+.badgeItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 0 20px;
+}
+
+/* Thin vertical lines between footer badges */
+.badgeItem:not(:first-child) {
+  border-inline-start: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.badgeIcon {
+  color: var(--color-primary);
+  filter: drop-shadow(0 0 6px var(--color-primary-glow));
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.badgeTextWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: start;
+}
+
+.badgeTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.badgeDesc {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.copyrightText {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* التجاوب */
+@media (max-width: 1200px) {
+  .splitLayout {
+    padding: 0 4%;
+  }
+}
+
+@media (max-width: 968px) {
+  .splitLayout {
+    grid-template-columns: 1fr;
+    min-height: calc(100vh - 260px);
+    padding: 40px 20px;
+  }
+  
+  .leftPane {
+    display: none; /* إخفاء القسم الأيسر على الجوال */
+  }
+  
+  .rightPane {
+    padding: 20px 0;
+  }
+  
+  .langToggleBtn {
+    top: 20px;
+    right: 20px;
+  }
+  
+  .badgesContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 0;
+  }
+
+  .badgeItem {
+    padding: 0 10px;
+    border: none !important; /* Hide separator lines when wrapped */
+  }
+}
+
+@media (max-width: 480px) {
+  .loginCard {
+    padding: 30px 20px;
+  }
+  
+  .badgesContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .badgeItem {
+    padding: 10px 0;
+    border: none !important;
+  }
+  
+  .langToggleBtn {
+    top: 16px;
+    right: 16px;
+  }
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

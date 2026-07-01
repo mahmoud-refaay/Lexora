@@ -1,0 +1,427 @@
+.hubContainer {
+  width: 100%;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ====== رأس الصفحة ====== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.headerBtn {
+  white-space: nowrap;
+}
+
+/* ====== بطاقات الإحصائيات ====== */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px !important;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.statCard:hover::before {
+  opacity: 0.6;
+}
+
+.statCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--glass-border-focus);
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.primaryIcon {
+  background: var(--color-primary-glow);
+  color: var(--color-primary);
+}
+
+.successIcon {
+  background: var(--color-success-glow);
+  color: var(--color-success);
+}
+
+.dangerIcon {
+  background: var(--color-danger-glow);
+  color: var(--color-danger);
+}
+
+.secondaryIcon {
+  background: var(--color-secondary-glow);
+  color: var(--color-secondary);
+}
+
+.statDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.shimmer {
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+  background: linear-gradient(90deg, rgba(192,149,84,0.1), rgba(192,149,84,0.25), rgba(192,149,84,0.1));
+  background-size: 200% 100%;
+  animation: shimmerAnim 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmerAnim {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ====== عناوين الأقسام ====== */
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.3px;
+}
+
+.sectionDesc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.viewAllBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-fast);
+}
+
+.viewAllBtn:hover {
+  color: var(--color-primary);
+  background: var(--color-primary-glow);
+}
+
+/* ====== بطاقات الانتقال السريع ====== */
+.navigationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.navCard {
+  cursor: pointer;
+  padding: 24px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: start;
+  transition: var(--transition-normal);
+}
+
+.navCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--glass-border-focus);
+  box-shadow: var(--glass-shadow);
+}
+
+.navCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.navIconWrapper {
+  color: var(--color-primary);
+  width: 56px;
+  height: 56px;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary-glow);
+}
+
+.arrow {
+  color: var(--text-muted);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.navCard:hover .arrow {
+  color: var(--color-primary);
+}
+
+:global([dir="ltr"]) .navCard:hover .arrow {
+  transform: translateX(4px);
+}
+
+:global([dir="rtl"]) .navCard:hover .arrow {
+  transform: translateX(-4px);
+}
+
+.navCardTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.navCardDesc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ====== جدول أحدث المستخدمين ====== */
+.recentCard {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.loadingState,
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 48px 24px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.emptyIcon {
+  opacity: 0.4;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--color-primary-glow);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.tableResponsive {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead th {
+  padding: 14px 18px;
+  text-align: start;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  border-bottom: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.02);
+  white-space: nowrap;
+}
+
+.table tbody td {
+  padding: 14px 18px;
+  font-size: 14px;
+  color: var(--text-main);
+  border-bottom: 1px solid rgba(192, 149, 84, 0.08);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.clickableRow {
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.clickableRow:hover {
+  background: rgba(192, 149, 84, 0.04);
+}
+
+.username {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.fullName {
+  font-weight: 500;
+}
+
+.roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.roleBadge {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-glow);
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.badgeActive {
+  color: var(--color-success);
+  background: var(--color-success-glow);
+}
+
+.badgeInactive {
+  color: var(--color-danger);
+  background: var(--color-danger-glow);
+}
+
+.date {
+  color: var(--text-muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.rowArrow {
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.clickableRow:hover .rowArrow {
+  color: var(--color-primary);
+}
+
+/* ====== التجاوب ====== */
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .statCard {
+    padding: 16px !important;
+    gap: 12px;
+  }
+
+  .statValue {
+    font-size: 22px;
+  }
+
+  .iconWrapper {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navigationGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .table thead th,
+  .table tbody td {
+    padding: 12px 12px;
+  }
+}

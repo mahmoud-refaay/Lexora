@@ -1,0 +1,272 @@
+.detailsContainer {
+  width: 100%;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ====== الشريط العلوي ====== */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-fast);
+}
+
+.backBtn:hover {
+  color: var(--color-primary);
+  background: var(--color-primary-glow);
+}
+
+.actionsBar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ====== بطاقة العنوان ====== */
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 32px !important;
+  background: linear-gradient(135deg, rgba(192, 149, 84, 0.06) 0%, rgba(13, 19, 31, 0.7) 100%) !important;
+  border: 1px solid var(--glass-border) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.profileHeader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+}
+
+.profileAvatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--color-primary-glow);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 0 24px var(--color-primary-glow);
+}
+
+.profileMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profileName {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.3px;
+}
+
+.profileUsername {
+  font-size: 14px;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.profileBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.badgeActive {
+  color: var(--color-success);
+  background: var(--color-success-glow);
+}
+
+.badgeInactive {
+  color: var(--color-danger);
+  background: var(--color-danger-glow);
+}
+
+.roleBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-glow);
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+}
+
+/* ====== بطاقات المعلومات ====== */
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.infoCard {
+  padding: 24px !important;
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--glass-border);
+  letter-spacing: 0.3px;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.infoIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--border-radius-sm);
+  background: rgba(192, 149, 84, 0.06);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.infoLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.infoValue {
+  font-size: 14px;
+  color: var(--text-main);
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.textSuccess {
+  color: var(--color-success);
+}
+
+.textDanger {
+  color: var(--color-danger);
+}
+
+/* ====== حالات التحميل والخطأ ====== */
+.stateContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 80px 24px;
+  color: var(--text-muted);
+}
+
+.spinner {
+  color: var(--color-primary);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.errorIcon {
+  color: var(--color-danger);
+  opacity: 0.6;
+}
+
+.stateText {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.stateBtn {
+  margin-top: 8px;
+}
+
+/* ====== التجاوب ====== */
+@media (max-width: 768px) {
+  .profileHeader {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 24px !important;
+  }
+
+  .profileBadges {
+    justify-content: center;
+  }
+
+  .topBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actionsBar {
+    flex-direction: column;
+  }
+
+  .actionsBar button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+}

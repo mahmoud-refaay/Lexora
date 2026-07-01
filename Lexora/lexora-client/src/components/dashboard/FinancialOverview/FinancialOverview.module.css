@@ -1,0 +1,191 @@
+.financialCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(10, 15, 28, 0.45) 0%, rgba(4, 7, 12, 0.6) 100%) !important;
+  border: 1px solid var(--glass-border) !important;
+  transition: all var(--transition-normal);
+  height: 100%;
+  min-height: 176px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--glass-shadow);
+}
+
+.financialCard:hover {
+  border-color: var(--glass-border-focus) !important;
+  box-shadow: var(--glass-shadow);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.headerIcon {
+  color: var(--color-primary);
+  filter: drop-shadow(0 0 4px var(--color-primary-glow));
+}
+
+.panelTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-align: start;
+}
+
+.mainInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-grow: 1;
+  margin-bottom: 12px;
+}
+
+:global(html[lang="ar"]) .mainInfo {
+  direction: rtl;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: start;
+  gap: 2px;
+}
+
+:global(html[lang="ar"]) .meta {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.value {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-main);
+  font-family: var(--font-english);
+}
+
+:global(html[lang="ar"]) .value {
+  font-family: var(--font-arabic);
+}
+
+.valueSplitWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+}
+
+:global(html[lang="ar"]) .valueSplitWrapper {
+  align-items: flex-end;
+}
+
+.valueNumber {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-main);
+  font-family: var(--font-english);
+  line-height: 1.1;
+}
+
+:global(html[lang="ar"]) .valueNumber {
+  font-family: var(--font-arabic);
+}
+
+.valueText {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 550;
+  line-height: 1.1;
+  margin-top: 1px;
+}
+
+.trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10.5px;
+  color: var(--color-success);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.trendIcon {
+  flex-shrink: 0;
+}
+
+.sparkline {
+  width: 110px;
+  height: 40px;
+  overflow: visible;
+}
+
+.footerRow {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 10px;
+  gap: 12px;
+}
+
+:global(html[lang="ar"]) .footerRow {
+  direction: rtl;
+}
+
+.footerCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: start;
+  gap: 3px;
+  flex: 1;
+}
+
+:global(html[lang="ar"]) .footerCol {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.colLabel {
+  font-size: 10.5px;
+  color: var(--text-muted);
+}
+
+.colValue {
+  font-size: 13.5px;
+  font-weight: 700;
+  font-family: var(--font-english);
+}
+
+:global(html[lang="ar"]) .colValue {
+  font-family: var(--font-arabic);
+}
+
+.duesText {
+  color: var(--text-main);
+}
+
+.paymentsText {
+  color: var(--text-main);
+}
+
+@media (max-width: 576px) {
+  .mainInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .sparkline {
+    width: 100%;
+    height: 60px;
+  }
+}
